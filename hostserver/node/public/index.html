@@ -1,0 +1,108 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Airplane Project</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="styles/style.css" type="text/css" rel="stylesheet" />
+    <script src='/socket.io/socket.io.js' type='text/javascript'></script>
+    <script src="scripts/external/jquery-3.2.1.min.js"></script>
+    <script src="scripts/script.js"></script>
+</head>
+
+<body>
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <h1 class="display-3" style="margin-bottom: 80px">Airplane Project - Team Alpha</h1>
+
+    <div class="dropdown">
+        <span style="padding-right:5em">
+            <b>Airplane selected:</b>
+        </span>
+        <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">
+            <span id="selected-airplane" selected="0">None</span>
+            <span class="caret"></span>
+        </button>
+        <ul id="airplane-list-drop-down" class="dropdown-menu" role="menu" aria-labelledby="menu1" style="margin-left: 14.45em">
+            <li role="presentation">
+                <a role="menuitem" tabindex="-1" href="javascript:void(0)" onclick="onAirplaneSelect('None', '0')">None</a>
+            </li>
+        </ul>
+    </div>
+
+    <div style="margin-top: 40px">
+        <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+        <!-- Error message. -->
+        <div id="error-message" class="alert alert-danger" role="alert" style="width: 100%; height: 200px; display: none;">
+            <div>
+                <h2>
+                    <strong>
+                        <span id="error-title">ERROR CODE</span>:
+                    </strong>
+                    <span id="error-subtitle">Error subtitle!</span>
+                    <br>
+                </h2>
+                <span id="error-text">Error message.</span>
+            </div>
+        </div>
+
+        <!-- Updating message. -->
+        <div id="updating-message" class="alert alert-info" role="alert" style="width: 100%; height: 200px; display: none;">
+            <div>
+                <h2>
+                    <strong>Updating...</strong>
+                </h2>
+            </div>
+        </div>
+
+        <!-- Actual content. -->
+        <div id="content" style="margin-left: 35px; display: none;">
+            <div style="margin-left: 35%">
+                <span style="padding-right:4em">
+                    <b>Temperature:</b>
+                </span>
+                <span id="temperature-val">Val</span>
+                <br>
+                <span style="padding-right:6em">
+                    <b>Humidity:</b>
+                </span>
+                <span id="humidity-val">Val</span>
+                <br>
+                <span style="padding-right:6.2em">
+                    <b>Position:</b>
+                </span>
+                <span id="position-val">Val</span>
+                <br>
+                <span style="padding-right:5.05em">
+                    <b>Door state:</b>
+                </span>
+                <span id="door-state-val">Val</span>
+                <br>
+                <span style="padding-right:5.65em">
+                    <b>Pressure:</b>
+                </span>
+                <span id="pressure-val">Val</span>
+                <br>
+                <span style="padding-right:5.65em">
+                    <b>Z direction:</b>
+                </span>
+                <span id="direction">Val</span>
+                <br>
+                <span style="padding-right:2.95em">
+                    <b>System uptime:</b>
+                </span>
+                <span id="system-uptime-val">Val</span>
+                <br>
+            </div>
+            <div id="plot" style="width: 80%; margin-left: 10%;" />
+        </div>
+    </div>
+
+</body>
+
+</html>

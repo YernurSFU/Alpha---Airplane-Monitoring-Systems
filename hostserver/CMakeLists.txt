@@ -1,0 +1,2 @@
+file(GLOB HOST_SERVER_NODE_FILES node/*)
+file(COPY ${HOST_SERVER_NODE_FILES} DESTINATION ${CMAKE_BINARY_DIR}/dst/hostserver/nodeserverapp)
